@@ -1,34 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @person.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @person.last_name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @person.description %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @person.email %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @person.phone_number %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @person.active %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<header class="sixteen columns">
+  <h1><%= @person.first_name %> <%= @person.last_name %></h1>
+  <h2>This is my CV</h2>
+</header>
+<div class="about sixteen columns">
+ <p>
+   <%= @person.description %>
+   
+  </p>
+</div><!--closed about div-->
+<div class="info">
+  <div class="contact nine columns">
+    <h3>Contact</h3>
+    <ul>
+      <li>
+        <%= @person.email %>
+      </li>
+      <li>
+        <%= @person.phone_number %>
+      </li>
+    </ul>
+  </div><!--closed contact-->
+  <div class="links seven columns">
+    <h3>Links</h3>
+    <%= link_to "All People", people_path %>
+    <%= link_to "Edit Person", edit_person_path(@person) %>
+  </div>
+</div><!--closed class div-->
